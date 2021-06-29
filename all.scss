@@ -1,0 +1,606 @@
+@import "variable";
+@import "reset";
+@import "mixin";
+
+
+/*header*/
+.header{
+	display: flex;
+	justify-content: space-between;
+	margin: 10px auto;
+    h1 a{
+	display: block;
+	width: 128px;
+	height: 38px;
+    }   
+}
+.menu{
+	display: flex;
+	align-items: center;
+    font-size: $fz-2;
+	
+    li a{
+	 position: relative;
+     display: block;
+	 padding-left: 32px;
+	 color: $text-secondary;
+    &:hover{
+	  color: $text-light-primary;
+   		}
+  	}
+	em{
+	 display: none;
+	}  
+	@include mobile{
+		span{
+			display: none;
+		}
+		em{
+			position: absolute;
+			top: -8px;
+			right: -12px;
+			background: $text-primary;
+			width: 16px;
+			height: 16px;
+			border-radius: 7px;
+			display: block;				
+			font-size: $fz-0;
+			text-align: center;
+			color: $text-white;
+		}
+	}	  
+}   
+
+/*banner*/
+.banner{
+	color: $text-white;	
+	background: url("https://hexschool.github.io/webLayoutTraining1st/perfume-week6/index1.jpg") no-repeat;
+	background-size: cover;
+	background-position: -100px -56px;
+}
+.bannerContent{
+	display: flex;
+	justify-content: flex-end;
+	padding-left: 0;
+	padding-right: 0;
+
+    .bannerText{
+	width: 445px;
+	padding-top: 295px;
+	padding-bottom: 295px;
+  }
+    h2{
+	line-height: 60px;
+	font-weight: bold;
+    font-size: $fz-6;
+}
+    p{
+    line-height: 36px;
+    font-size: $fz-3;
+ }  
+    button{	
+		background: rgba(255, 255, 255, 0);		
+		color: $text-white;
+		margin-top: 16px;
+		font-size: $fz-4;	
+		border-radius: 30px;
+		border: 2px solid #FFFFFF;
+		width: 350px;
+		height: 60px;
+		&:hover{
+		background: rgba(255, 255, 255, 0.5);
+		}
+    }  
+}
+
+/*prodcuct*/
+.product{
+	display: flex;		
+}
+.row-reverse{
+	display: flex;
+	flex-direction: row-reverse;
+}
+.productPic{			
+	width: 555px;
+	height: 555px;
+
+	img{
+		width: 100%;
+		height: 100%;
+		object-fit:cover;
+		object-position: 0;
+	}
+}
+.productPicBottom{			
+	width: 555px;
+	height: 1080px;
+
+	img{
+		width: 100%;
+		height: 100%;
+		object-fit:cover;				
+	}
+}
+.productText{
+		width: 50%;
+		padding: 110px;
+			h2{
+		font-size: $fz-5;
+		line-height: 48px;
+		font-weight: bold;
+		padding-bottom: 5px;
+	}	
+	p{
+		font-size: $fz-2;
+		line-height: 30px;
+		padding-bottom: 16px;
+	}
+	a{
+		line-height: 20px;
+		color: $text-light-primary;
+
+		&:hover{
+			color: lighten($text-light-primary,20%);
+		}
+	}
+	.fz-3{
+		font-size: $fz-3;
+		line-height: 36px;				
+	}
+	.fz-normal{
+		font-size: 16px;
+		line-height: 24px;
+		margin-bottom: 52px;
+	}
+	 button{
+		width: 350px;
+		height: 60px;
+		color: $text-black;
+		font-size: $fz-2;					
+		background: rgba(255, 255, 255, 0);		
+		border-radius: 30px;
+		border: 2px solid $text-black;
+		margin-top: 60px;
+	
+		&:hover{
+		background: rgba(194, 192, 192, 0.6);
+		}
+	}
+}
+
+/*prodcuct pad+mobile*/
+@include pad{
+	.product{
+		display: block;
+	}
+	.productText{
+		width: 100%;
+		padding: 0px 15px;
+		margin-bottom: 20px;
+		button{
+			width: 100%;
+			margin: 0px auto;
+		}
+		.fz-normal{
+		margin-bottom: 10px;
+	}		
+	}
+	.row-reverse{
+		display: block;
+		flex-direction: row;
+	}
+
+	.productPic,.productPicBottom{
+		width: 100%;
+	}					
+}
+@include mobile{
+	.product{
+		display: block;
+	}
+	.productText{
+		width: 100%;
+		padding: 0px 15px;
+		button{
+			width: 100%;
+			margin: 0px auto;
+		}		
+	}
+	.row-reverse{
+		display: block;
+		flex-direction: row;
+	}
+	.fz-normal{
+		margin-bottom: 20px;
+	}					
+}
+
+/*showProduct*/
+.showProductBg{
+	background-color: $text-light-secondary;
+}
+.showProduct{
+	display: flex;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+.showProductContent{
+	width: 33.3333333333%;
+	margin: 0 15px;	
+
+	.showProductPic{		
+	width: 100%;
+	height: 540px;	
+	background-size: cover;	
+	background-repeat: no-repeat;
+	}
+	.pic1{		
+		background-image: url("https://hexschool.github.io/webLayoutTraining1st/perfume-week6/index6.jpg");
+	}	
+	.pic2{
+		background-image: url("https://hexschool.github.io/webLayoutTraining1st/perfume-week6/index7.jpg");	
+	}
+	.pic3{	
+		background-image: url("https://hexschool.github.io/webLayoutTraining1st/perfume-week6/index8.jpg");	
+	}	
+	h3{
+		font-size: $fz-3;
+		line-height: 36px;
+		font-weight: bold;
+	}
+	p{
+	   margin-bottom: 16px;
+	   margin-top: 5px;
+	   line-height: 24px;
+	}
+	.soldout{
+		background-color: $text-black;
+		opacity: 0.1;
+		color:$text-white;	
+		font-size: $fz-3;
+		line-height: 540px;
+		text-align: center;
+	}	
+}
+/*showProduct pad*/	
+@include pad{
+	.showProduct{
+		display: block;
+	}	
+	.showProductContent{
+		width: 100%;		
+		margin: 5% auto;
+
+		.showProductPic{	
+			background-position: bottom 10% center;
+		}
+	}
+}
+
+.bottle-recycling{
+	display: flex;
+	margin-top: 60px;
+	margin-bottom: 60px;
+
+	.bottlePic{
+		width: 66.6666666666%;
+		margin-right: 15px;	
+	}
+	.bottleText{
+		width: 33.3333333333%;
+		padding: 60px 15px;
+	}
+	h2{
+		font-size: $fz-5;
+		line-height: 48px;
+		font-weight: bold;
+	}
+	// .title{
+	// 	font-size: $fz-2;
+	// 	line-height: 30px;
+	// }
+	.text{
+		line-height: 24px;
+		margin-top: 16px;
+		margin-bottom: 16px;
+	}
+	a{
+		line-height: 24px;
+		color: $text-light-primary;
+
+		&:hover{
+			color: lighten($text-light-primary,20%);
+		}
+	}	
+}
+
+/*bottle-recycling pad*/
+@include pad{
+	.bottle-recycling{
+		display: block;
+		margin-top: 40px;
+		margin-bottom: 40px;	
+
+		.bottlePic{
+			width: 100%;
+			margin-right: 0px;
+		}
+		.bottleText{
+			width: 100%;
+			padding: 10px 0px;				
+		}
+	}
+}
+
+.subscribe{
+	width: 100%;
+	height: 600px;
+	background-position: center center;
+	background-size: cover;
+	background-image: url("https://hexschool.github.io/webLayoutTraining1st/perfume-week6/index10.jpg");
+	background-repeat: no-repeat;
+
+	.bannerText{
+		padding-top: 312px;
+		p{
+		color: $text-secondary;
+		font-size: $fz-5;
+		line-height: 48px;
+		}
+	}
+	.mail{
+		margin-top: 20px;		
+	}
+	input{
+		padding-top: 20px;
+		padding-bottom: 20px;
+		padding-left: 16px;
+		border: 2px solid $text-primary;
+		border-radius: 4px 0px 0px 4px ;
+		font-family: "Noto Sans TC", sans-serif;
+
+		color: $text-secondary;
+	}
+	a{
+		background-color: $text-primary;
+		padding: 20px 27px;
+		margin-left: -5px;		
+		color: $text-white;
+		border-radius: 0px 4px 4px 0px ;
+
+		&:hover{
+			background-color: darken($text-primary,5%);
+		}
+	}
+}
+
+/*footer*/
+.footerBg{
+	background-color: $text-primary;
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+	.footer{
+		display: flex;
+		justify-content: space-between;
+		color: $text-white;
+	}
+	.logo{
+		display: flex;
+	}
+	p{
+		padding-top: 11px;
+		padding-bottom: 11px;
+		font-size: $fz-1;
+		margin-left: 20px;
+		line-height: 21px;
+	}
+	.menu{
+		a{
+			display: block;
+			font-size: $fz-2;
+			color: $text-white;
+		}
+	}
+}
+@include pad{
+	.footerBg{	
+		.menu{
+			display: none;
+		}
+		.footer{
+			justify-content: center;
+		}		
+	}
+}
+
+
+/*brand*/
+.brand{
+	background-color: $text-primary;
+	margin-bottom: 80px;
+	.brandmenu{
+		display: flex;
+		a{
+			font-size: $fz-2;
+			color: $text-white;
+			display: block;
+			padding: 14px;
+		}
+	}
+}
+@include pad{
+	.brand{
+		display: none;
+	}
+}
+
+/*page*/
+.page{
+	color: $text-secondary;
+	display: flex;
+	line-height: 22px;	
+}
+.pageMenu{
+	width: 97px;
+	.pageTilte{		
+		line-height: 30px;
+		font-size: $fz-2;
+		margin-bottom: 16px;
+		font-weight: 600;
+	}
+	a{
+		display: block;
+		line-height: 24px;
+		color: $text-secondary;
+		padding-top: 12px;
+		padding-bottom: 12px;
+		&:hover{
+			border-bottom: 2px solid #916000;
+		}
+	}
+}	
+
+
+/*page-number*/
+.number{	
+		font-size: $fz-normal;
+		line-height: 30px;
+	.fa-user{
+		line-height: 30px;
+		margin-left: 6px;
+	}
+	.numberGroup{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	display: flex;
+		label{
+		width: 94px;
+	}
+	}
+
+	.inputTextBorder{
+		border: 0px;
+	}	
+	.point{
+		font-size: $fz-1;
+		line-height: 21px;
+
+	}
+}
+
+
+/*page-member*/
+.member{
+	width: 635px;
+	margin-left: 92px;
+	margin-right: 30px;
+	.memberTitle{
+		font-weight: bold;
+		color: $text-black;
+		padding-bottom: 8px;
+		border-bottom: 1px solid #818A91;
+		line-height: 22px;
+	}
+}
+.inputGroup{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	display: flex;
+	line-height: 38px;
+	label{
+		width: 94px;
+		// margin-right: 31px;
+
+	}
+	input{
+		width: 350px;
+		height: 38px;
+		border: 1px solid #CED4DA;
+		border-radius: 4px;
+	}
+	select{		
+		border: 1px solid #CED4DA;
+		border-radius: 4px;		
+	}	
+	.inputText,select{
+		color: $text-secondary;
+		font-size: $fz-normal;
+		font-family: "Noto Sans TC", sans-serif;
+	}
+	.col-6{
+		width: 160px;
+		height: 38px;		
+		margin-bottom: 12px;
+		margin-right: 8px;
+	}	
+	.checkbox{
+		width: 15px;
+		height: 15px;
+		margin-top: 12px;
+	}
+	.submitBtn{
+		// display: block;
+		width: 160px;
+		height: 38px;
+		background-color: $text-primary ;
+		border: 1px solid $text-primary;
+		border-radius: 4px;
+		text-align: center;
+		color: $text-white;
+		margin-top: 16px;
+		margin-bottom: 48px;
+	}
+}
+
+/*flex row*/
+	.d-row{
+		display: flex;
+		flex-direction: row;		
+	}
+
+	.d-column{
+		display: flex;
+		flex-direction: column;
+	} 
+
+	.column-reverse{
+		display: flex;
+		flex-direction: row;
+	}
+	.title{
+		font-size: $fz-2;
+		line-height: 30px;
+	}	
+@include pad{
+	.page{
+		display: block;
+		margin-top: 49px;
+	}
+	.pageMenu{
+	width: 100%;
+	display: flex;
+	margin: 0 15px;
+
+		.pageTilte{
+			display: none;
+		}
+		li a{
+			margin-left: 22px;
+			margin-right: 22px;
+		}
+	}
+
+	.column-reverse{
+		display: flex;	
+		flex-direction: column-reverse;
+	}
+	.member{
+		width: 100%;
+		margin: 40px auto;
+	}
+	.number{
+		margin-top: 40px;
+	}
+}
