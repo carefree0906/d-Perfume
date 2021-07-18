@@ -1,0 +1,330 @@
+/*banner*/
+.banner{
+	color: $text-white;	
+	background: url("https://hexschool.github.io/webLayoutTraining1st/perfume-week6/index1.jpg") no-repeat;
+	background-size: cover;
+	background-position: -100px -56px;
+}
+.bannerContent{
+	display: flex;
+	justify-content: flex-end;
+	padding-left: 0;
+	padding-right: 0;
+
+    .bannerText{
+	width: 445px;
+	padding-top: 295px;
+	padding-bottom: 295px;
+  }
+    h2{
+	line-height: 60px;
+	font-weight: bold;
+    font-size: $fz-6;
+}
+    p{
+    line-height: 36px;
+    font-size: $fz-3;
+ }  
+    button{	
+		background: rgba(255, 255, 255, 0);		
+		color: $text-white;
+		margin-top: 16px;
+		font-size: $fz-4;	
+		border-radius: 30px;
+		border: 2px solid #FFFFFF;
+		width: 350px;
+		height: 60px;
+		&:hover{
+		background: rgba(255, 255, 255, 0.5);
+		cursor: pointer;
+		}
+    }  
+}
+
+/*prodcuct*/
+.product{
+	display: flex;		
+}
+.row-reverse{
+	display: flex;
+	flex-direction: row-reverse;
+}
+.productPic{			
+	width: 555px;
+	height: 555px;
+
+	img{
+		width: 100%;
+		height: 100%;
+		object-fit:cover;
+		object-position: 0;
+	}
+}
+.productPicBottom{			
+	width: 555px;
+	height: 1080px;
+
+	img{
+		width: 100%;
+		height: 100%;
+		object-fit:cover;				
+	}
+}
+.productText{
+		width: 50%;
+		padding: 110px;
+			h2{
+		font-size: $fz-5;
+		line-height: 48px;
+		font-weight: bold;
+		padding-bottom: 5px;
+	}	
+	p{
+		font-size: $fz-2;
+		line-height: 30px;
+		padding-bottom: 16px;
+	}
+	a{
+		line-height: 20px;
+		color: $text-light-primary;
+
+		&:hover{
+			color: lighten($text-light-primary,20%);
+		}
+	}
+	.fz-3{
+		font-size: $fz-3;
+		line-height: 36px;				
+	}
+	.fz-normal{
+		font-size: 16px;
+		line-height: 24px;
+		margin-bottom: 52px;
+	}
+	 button{
+		width: 350px;
+		height: 60px;
+		color: $text-black;
+		font-size: $fz-2;					
+		background: rgba(255, 255, 255, 0);		
+		border-radius: 30px;
+		border: 2px solid $text-black;
+		margin-top: 60px;
+	
+		&:hover{
+		background: rgba(194, 192, 192, 0.6);
+		}
+		cursor: pointer;
+	}
+}
+
+/*prodcuct pad+mobile*/
+@include pad{
+	.product{
+		display: block;
+	}
+	.productText{
+		width: 100%;
+		padding: 0px 15px;
+		margin-bottom: 20px;
+		button{
+			width: 100%;
+			margin: 0px auto;
+		}
+		.fz-normal{
+		margin-bottom: 10px;
+	}		
+	}
+	.row-reverse{
+		display: block;
+		flex-direction: row;
+	}
+
+	.productPic,.productPicBottom{
+		width: 100%;
+	}					
+}
+@include mobile{
+	.product{
+		display: block;
+	}
+	.productText{
+		width: 100%;
+		padding: 0px 15px;
+		button{
+			width: 100%;
+			margin: 0px auto;
+		}		
+	}
+	.row-reverse{
+		display: block;
+		flex-direction: row;
+	}
+	.fz-normal{
+		margin-bottom: 20px;
+	}					
+}
+
+/*showProduct*/
+.showProductBg{
+	background-color: $text-light-secondary;
+}
+.showProduct{
+	display: flex;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+.showProductContent{
+	width: 33.3333333333%;
+	margin: 0 15px;	
+
+	.showProductPic{		
+	width: 100%;
+	height: 540px;	
+	background-size: cover;	
+	background-repeat: no-repeat;
+	}
+	.pic1{		
+		background-image: url("https://hexschool.github.io/webLayoutTraining1st/perfume-week6/index6.jpg");
+	}	
+	.pic2{
+		background-image: url("https://hexschool.github.io/webLayoutTraining1st/perfume-week6/index7.jpg");	
+	}
+	.pic3{	
+		background-image: url("https://hexschool.github.io/webLayoutTraining1st/perfume-week6/index8.jpg");	
+	}	
+	h3{
+		font-size: $fz-3;
+		line-height: 36px;
+		font-weight: bold;
+	}
+	p{
+	   margin-bottom: 16px;
+	   margin-top: 5px;
+	   line-height: 24px;
+	}
+	del{
+		color: $text-secondary;
+		margin-left: 8px;
+	}
+	.soldout{
+		background-color: $text-black;
+		opacity: 0.1;
+		color:$text-white;	
+		font-size: $fz-3;
+		line-height: 540px;
+		text-align: center;
+	}	
+}
+/*showProduct pad*/	
+@include pad{
+	.showProduct{
+		display: block;
+	}	
+	.showProductContent{
+		width: 100%;		
+		margin: 5% auto;
+
+		.showProductPic{	
+			background-position: bottom 10% center;
+		}
+	}
+}
+
+.bottle-recycling{
+	display: flex;
+	margin-top: 60px;
+	margin-bottom: 60px;
+
+	.bottlePic{
+		width: 66.6666666666%;
+		margin-right: 15px;	
+	}
+	.bottleText{
+		width: 33.3333333333%;
+		padding: 60px 15px;
+	}
+	h2{
+		font-size: $fz-5;
+		line-height: 48px;
+		font-weight: bold;
+	}
+	// .title{
+	// 	font-size: $fz-2;
+	// 	line-height: 30px;
+	// }
+	.text{
+		line-height: 24px;
+		margin-top: 16px;
+		margin-bottom: 16px;
+	}
+	a{
+		line-height: 24px;
+		color: $text-light-primary;
+
+		&:hover{
+			color: lighten($text-light-primary,20%);
+		}
+	}	
+}
+
+/*bottle-recycling pad*/
+@include pad{
+	.bottle-recycling{
+		display: block;
+		margin-top: 40px;
+		margin-bottom: 40px;	
+
+		.bottlePic{
+			width: 100%;
+			margin-right: 0px;
+		}
+		.bottleText{
+			width: 100%;
+			padding: 10px 0px;				
+		}
+	}
+}
+
+.subscribe{
+	width: 100%;
+	height: 600px;
+	background-position: center center;
+	background-size: cover;
+	background-image: url("https://hexschool.github.io/webLayoutTraining1st/perfume-week6/index10.jpg");
+	background-repeat: no-repeat;
+
+	.bannerText{
+		padding-top: 312px;
+		p{
+		color: $text-secondary;
+		font-size: $fz-5;
+		line-height: 48px;
+		}
+	}
+	.mail{
+		margin-top: 20px;		
+	}
+	input{
+		padding-top: 20px;
+		padding-bottom: 20px;
+		padding-left: 16px;
+		border: 2px solid $text-primary;
+		border-radius: 4px 0px 0px 4px ;
+		font-family: "Noto Sans TC", sans-serif;
+
+		color: $text-secondary;
+	}
+	a{
+		background-color: $text-primary;
+		padding: 20px 27px;
+		margin-left: -5px;		
+		color: $text-white;
+		border-radius: 0px 4px 4px 0px ;
+
+		&:hover{
+			background-color: darken($text-primary,5%);
+		}
+	}
+}
+

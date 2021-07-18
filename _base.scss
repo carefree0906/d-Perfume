@@ -1,0 +1,109 @@
+/*header*/
+.header{
+	display: flex;
+	justify-content: space-between;
+	margin: 10px auto;
+    h1 a{
+	display: block;
+	width: 128px;
+	height: 38px;
+    }   
+}
+.menu{
+	display: flex;
+	align-items: center;
+    font-size: $fz-2;
+	
+    li a{
+	 position: relative;
+     display: block;
+	 padding-left: 32px;
+	 color: $text-secondary;
+    &:hover{
+	  color: $text-light-primary;
+   		}
+  	}
+	em{
+	 display: none;
+	}  
+	@include mobile{
+		span{
+			display: none;
+		}
+		em{
+			position: absolute;
+			top: -8px;
+			right: -12px;
+			background: $text-primary;
+			width: 16px;
+			height: 16px;
+			border-radius: 7px;
+			display: block;				
+			font-size: $fz-0;
+			text-align: center;
+			color: $text-white;
+		}
+	}	  
+}   
+
+/*brand*/
+.brand{
+	background-color: $text-primary;
+	margin-bottom: 80px;
+	.brandmenu{
+		display: flex;
+		a{
+			font-size: $fz-2;
+			color: $text-white;
+			display: block;
+			padding: 14px;
+		}
+	}
+}
+@include pad{
+	.brand{
+		display: none;
+	}
+}
+
+
+
+/*footer*/
+.footerBg{
+	background-color: $text-primary;
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+	.footer{
+		display: flex;
+		justify-content: space-between;
+		color: $text-white;
+	}
+	.logo{
+		display: flex;
+	}
+	p{
+		padding-top: 11px;
+		padding-bottom: 11px;
+		font-size: $fz-1;
+		margin-left: 20px;
+		line-height: 21px;
+	}
+	.menu{
+		a{
+			display: block;
+			font-size: $fz-2;
+			color: $text-white;
+		}
+	}
+}
+@include pad{
+	.footerBg{	
+		.menu{
+			display: none;
+		}
+		.footer{
+			justify-content: center;
+		}		
+	}
+}
